@@ -181,10 +181,6 @@ import javax.swing.table.AbstractTableModel;
         ////////////////////////////////////////////////////////////  
       
       
-        /* Retorna o recibo da linha especificada. */  
-        public Cliente getAgenda(int indiceLinha) {  
-            return linhas.get(indiceLinha);  
-        }  
           
         /* Adiciona um registro. */  
         public void addCliente(Cliente cli) {  

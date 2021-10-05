@@ -22,12 +22,14 @@ public class Main extends javax.swing.JFrame {
         ArrayList<Fabricante> fabricantes= new ArrayList<>();
         ArrayList<Produto> produtos= new ArrayList<>();
         ArrayList<Venda> vendas= new ArrayList<>();
-        ListaClienteTableModel listacliente;  
+        ListaClienteTableModel listacliente;
+        ListaFabricanteTableModel listafabricante;
+        ListaProdutoTableModel listaproduto;
 
     public Main() {
         initComponents();
         setClienteTable();
-        
+        setFabricanteTable();
     }
 
     /**
@@ -639,13 +641,21 @@ public class Main extends javax.swing.JFrame {
             a.setId(fabricantes.size()+1);
             fabricantes.add(a);
         }
-        repaint();
+        setFabricanteTable();
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    public void setFabricanteTable(){
+        listafabricante = new ListaFabricanteTableModel(fabricantes);
+
+        jTable2.setFont(new java.awt.Font("Times New Roman", 0, 18));
+        jTable2.setModel(listafabricante);
+        setConfigTabela1();
+    }
+    
     public void setClienteTable() {
         listacliente = new ListaClienteTableModel(clientes);
 
@@ -685,6 +695,37 @@ public class Main extends javax.swing.JFrame {
         jTable1.getColumnModel().getColumn(8).setMinWidth(100);
         jTable1.getColumnModel().getColumn(8).setCellRenderer(esquerda);
 
+        
+    }
+    private void setConfigTabela2() {
+
+        DefaultTableCellRenderer centralizado = new DefaultTableCellRenderer();
+        centralizado.setHorizontalAlignment(SwingConstants.CENTER);
+
+        DefaultTableCellRenderer esquerda = new DefaultTableCellRenderer();
+        esquerda.setHorizontalAlignment(SwingConstants.LEFT);
+
+
+        jTable2.getColumnModel().getColumn(0).setMinWidth(20);
+        jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
+        jTable2.getColumnModel().getColumn(0).setCellRenderer(centralizado);
+       
+        jTable2.getColumnModel().getColumn(1).setMinWidth(100);
+        jTable2.getColumnModel().getColumn(1).setCellRenderer(esquerda);
+        jTable2.getColumnModel().getColumn(2).setMinWidth(100);
+        jTable2.getColumnModel().getColumn(2).setCellRenderer(esquerda);
+        jTable2.getColumnModel().getColumn(3).setMinWidth(100);
+        jTable2.getColumnModel().getColumn(3).setCellRenderer(esquerda);
+        jTable2.getColumnModel().getColumn(4).setMinWidth(100);
+        jTable2.getColumnModel().getColumn(4).setCellRenderer(esquerda);
+        jTable2.getColumnModel().getColumn(5).setMinWidth(100);
+        jTable2.getColumnModel().getColumn(5).setCellRenderer(esquerda);
+        jTable2.getColumnModel().getColumn(6).setMinWidth(100);
+        jTable2.getColumnModel().getColumn(6).setCellRenderer(esquerda);
+        jTable2.getColumnModel().getColumn(7).setMinWidth(100);
+        jTable2.getColumnModel().getColumn(7).setCellRenderer(esquerda);
+        jTable2.getColumnModel().getColumn(8).setMinWidth(100);
+        jTable2.getColumnModel().getColumn(8).setCellRenderer(esquerda);
         
     }
     
