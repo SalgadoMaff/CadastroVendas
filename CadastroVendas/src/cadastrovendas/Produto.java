@@ -12,7 +12,6 @@ package cadastrovendas;
 public class Produto  {
     int id;
     String Nome;
-    Integer qtd;
     Float preco;
     String NomeFabricante;
 
@@ -32,13 +31,6 @@ public class Produto  {
         this.Nome = Nome;
     }
 
-    public int getQtd() {
-        return qtd;
-    }
-
-    public void setQtd(int qtd) {
-        this.qtd = qtd;
-    }
 
     public float getPreco() {
         return preco;
@@ -57,7 +49,7 @@ public class Produto  {
     }
     
     public boolean isNull(){
-        if (this.Nome.isEmpty()||this.NomeFabricante.isEmpty()||this.preco==null||this.qtd==null) {
+        if (this.Nome.isEmpty()||this.NomeFabricante.isEmpty()||this.preco==null) {
             return Boolean.TRUE;
         } else {
             return Boolean.FALSE;

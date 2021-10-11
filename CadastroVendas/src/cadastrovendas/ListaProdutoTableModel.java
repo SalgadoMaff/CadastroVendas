@@ -17,7 +17,7 @@ class ListaProdutoTableModel extends AbstractTableModel{
     private List<Produto> linhas;
      /* Array de Strings com o nome das colunas. */  
     private String[] colunas = new String[] {  
-                "ID", "Nome","QTD","Preço","Fabricante"};  
+                "ID", "Nome","Preço","Fabricante"};  
       
       
         /* Cria um ReciboTableModel vazio. */  
@@ -62,11 +62,9 @@ class ListaProdutoTableModel extends AbstractTableModel{
                     return int.class;
                 case 1: //nome
                     return String.class;
-                case 2://quantidade
-                    return int.class;
-                case 3://preço
+                case 2://preço
                     return float.class;
-                case 4://fabricante
+                case 3://fabricante
                     return String.class;
                 
                 default:
@@ -91,10 +89,8 @@ class ListaProdutoTableModel extends AbstractTableModel{
                 case 1: //Nome
                     return c.getNome();
                 case 2:
-                    return c.getQtd();
-                case 3:
                     return c.getPreco();
-                case 4:
+                case 3:
                     return c.getNomeFabricante();
                 
                 default:

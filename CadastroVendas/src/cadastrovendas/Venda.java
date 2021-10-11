@@ -14,8 +14,16 @@ import java.util.ArrayList;
 public class Venda {
     int id;
     String NomeProduto;
-    Float Valor;
+    int qtd_vendida;
     String NomeCliente;
+
+    public int getQtd_vendida() {
+        return qtd_vendida;
+    }
+
+    public void setQtd_vendida(int qtd_vendida) {
+        this.qtd_vendida = qtd_vendida;
+    }
 
     public int getId() {
         return id;
@@ -31,14 +39,6 @@ public class Venda {
 
     public void setNomeProduto(String NomeProduto) {
         this.NomeProduto = NomeProduto;
-    }
-
-    public Float getValor() {
-        return Valor;
-    }
-
-    public void setValor(Float Valor) {
-        this.Valor = Valor;
     }
 
     public String getNomeCliente() {

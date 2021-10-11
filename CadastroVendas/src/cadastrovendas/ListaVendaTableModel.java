@@ -17,7 +17,7 @@ public class ListaVendaTableModel extends AbstractTableModel{
     private List<Venda> linhas;
      /* Array de Strings com o nome das colunas. */  
     private String[] colunas = new String[] {  
-                "ID", "Cliente","Produto","Preço"};  
+                "ID", "Cliente","Produto","qtd_vendida"};  
       
       
         /* Cria um ReciboTableModel vazio. */  
@@ -64,8 +64,8 @@ public class ListaVendaTableModel extends AbstractTableModel{
                     return String.class;
                 case 2://produto
                     return String.class;
-                case 3://preço
-                    return float.class;
+                case 3://qtd vendida
+                    return int.class;
                 
                 default:
                     // Se o índice da coluna não for válido, lança um  
@@ -91,7 +91,7 @@ public class ListaVendaTableModel extends AbstractTableModel{
                 case 2:
                     return c.getNomeProduto();
                 case 3:
-                    return c.getValor();
+                    return c.getQtd_vendida();
                 
                 default:
                     // Se o índice da coluna não for válido, lança um  
