@@ -14,7 +14,7 @@ public class Produto  {
     String Nome;
     int qtd;
     float preco;
-    Fabricante fabricante;
+    String NomeFabricante;
 
     public int getId() {
         return id;
@@ -48,18 +48,13 @@ public class Produto  {
         this.preco = preco;
     }
 
-    public Fabricante getFabricante() {
-        return fabricante;
+    public String getNomeFabricante() {
+        return NomeFabricante;
     }
 
-    public void setFabricante(Fabricante fabricante) {
-        this.fabricante = fabricante;
+    public void setNomeFabricante(String NomeFabricante) {
+        this.NomeFabricante = NomeFabricante;
     }
-    
-    
-    
 
-
-   
-    
+  
 }

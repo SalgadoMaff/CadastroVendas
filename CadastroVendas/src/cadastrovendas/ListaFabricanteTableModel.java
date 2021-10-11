@@ -172,55 +172,8 @@ public class ListaFabricanteTableModel extends AbstractTableModel{
         ////////////////////////////////////////////////////////////  
       
       
-       /* Retorna o recibo da linha especificada. */  
-          
-        /* Adiciona um registro. */  
-        public void addCliente(Fabricante fab) {  
-            // Adiciona o registro.  
-            linhas.add(fab);  
+       
       
-            // Pega a quantidade de registros e subtrai um para achar  
-            // o último índice. É preciso subtrair um, pois os índices  
-            // começam pelo zero.  
-            int ultimoIndice = getRowCount() - 1;  
-      
-            // Reporta a mudança. O JTable recebe a notificação  
-            // e se redesenha permitindo que visualizemos a atualização.  
-            fireTableRowsInserted(ultimoIndice, ultimoIndice);  
-        }  
-      
-        /* Remove a linha especificada. */  
-        public void removeCliente(int indiceLinha) {  
-            // Remove o recibo da linha especificada.          
-            linhas.remove(indiceLinha);  
-      
-            // Reporta a mudança. O JTable recebe a notificação  
-            // e se redesenha permitindo que visualizemos a atualização.  
-            fireTableRowsDeleted(indiceLinha, indiceLinha);  
-        }  
-      
-        /* Adiciona uma lista de recibos ao final dos registros. */  
-        public void addLista(List<Fabricante> fab) {  
-            // Pega o tamanho antigo da tabela.  
-            int tamanhoAntigo = getRowCount();  
-      
-            // Adiciona os registros.  
-            linhas.addAll(fab);  
-      
-            // Reporta a mudança. O JTable recebe a notificação  
-            // e se redesenha permitindo que visualizemos a atualização.  
-            fireTableRowsInserted(tamanhoAntigo, getRowCount() - 1);  
-        }  
-      
-        /* Remove todos os registros. */  
-        public void limpar() {  
-            // Remove todos os elementos da lista de recibos.  
-            linhas.clear();  
-      
-            // Reporta a mudança. O JTable recebe a notificação  
-            // e se redesenha permitindo que visualizemos a atualização.  
-            fireTableDataChanged();  
-        }  
       
         /* Verifica se este table model está vazio. */  
         public boolean isEmpty() {  

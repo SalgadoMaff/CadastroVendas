@@ -6,6 +6,8 @@
 package cadastrovendas;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -30,6 +32,7 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         setClienteTable();
         setFabricanteTable();
+        setProdutoTable();
     }
 
     /**
@@ -158,7 +161,7 @@ public class Main extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 987, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -303,7 +306,7 @@ public class Main extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 987, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -424,13 +427,18 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setAutoscrolls(true);
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 987, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -499,6 +507,11 @@ public class Main extends javax.swing.JFrame {
         jButtonItem.setText("Adicionar Produto");
 
         jButton5.setText("Adicionar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -508,22 +521,21 @@ public class Main extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 987, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel25)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGap(0, 890, Short.MAX_VALUE)
+                        .addComponent(jButton5))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel27)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -538,14 +550,13 @@ public class Main extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel25)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(57, 57, 57)
                 .addComponent(jButtonItem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addGap(19, 19, 19))
         );
@@ -556,7 +567,9 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 992, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -575,7 +588,29 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField16ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        if(jComboBox1.getSelectedItem()==null){
+            JOptionPane.showMessageDialog(null, "Adicione um fabricante válido");
+        }else{
+            Produto produto=new Produto();
+            produto.setNome(jTextField17.getText());
+            produto.setPreco(Float.parseFloat(jTextField18.getText()));
+            produto.setQtd(Integer.parseInt(jTextField19.getText()));
+            for (Fabricante fab : fabricantes) {
+                if(fab.getNome()==jComboBox1.getSelectedItem().toString()){
+                    produto.setNomeFabricante(fab.getNome());
+                    break;
+                }
+            }
+            if (produtos.isEmpty()){
+                produto.setId(1);
+         
+            }else{
+                produto.setId(produtos.size()+1);
+            }
+            produtos.add(produto);
+        }
+        setProdutoTable();
+
     }//GEN-LAST:event_jButton3ActionPerformed
     
     private void AddCliente(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCliente
@@ -591,11 +626,10 @@ public class Main extends javax.swing.JFrame {
         a.CEP=jTextField8.getText();
         if (clientes.isEmpty()) {
             a.id=1;
-            clientes.add(a);
         } else {
             a.id=clientes.size()+1;
-            clientes.add(a);
         }
+        clientes.add(a);
         setClienteTable();
     }//GEN-LAST:event_AddCliente
 
@@ -636,14 +670,44 @@ public class Main extends javax.swing.JFrame {
         a.setCEP(jTextField15.getText());
         if(fabricantes.isEmpty()){
             a.setId(1);
-            fabricantes.add(a);
-        }else{
             a.setId(fabricantes.size()+1);
             fabricantes.add(a);
+            setFabricanteTable();
+            DefaultComboBoxModel dml= new DefaultComboBoxModel();
+            fabricantes.forEach(fabricante -> dml.addElement(fabricante.getNome()));
+            jComboBox1.setModel(dml);
+        }else{
+            boolean contem=false;
+            for (Fabricante fab : fabricantes) {
+                if (fab.Nome.matches(a.Nome)) {
+                    contem=true;
+                }
+                if(contem){break;}
+            }
+            if(!contem){
+                a.setId(fabricantes.size()+1);
+                fabricantes.add(a);
+                setFabricanteTable();
+                DefaultComboBoxModel dml= new DefaultComboBoxModel();
+                fabricantes.forEach(fabricante -> dml.addElement(fabricante.getNome()));
+                jComboBox1.setModel(dml);
+            }else{
+                JOptionPane.showMessageDialog(null, "O nome do fabricante deve ser unico");
+            }
+            
         }
-        setFabricanteTable();
+        
 
+        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -653,19 +717,26 @@ public class Main extends javax.swing.JFrame {
 
         jTable2.setFont(new java.awt.Font("Times New Roman", 0, 18));
         jTable2.setModel(listafabricante);
-        setConfigTabela1();
+        setConfigTabela();
     }
-    
+    public void setProdutoTable(){
+        listaproduto = new ListaProdutoTableModel(produtos);
+
+        jTable3.setFont(new java.awt.Font("Times New Roman", 0, 18));
+        jTable3.setModel(listaproduto);
+        setConfigTabela();
+    }
     public void setClienteTable() {
+
         listacliente = new ListaClienteTableModel(clientes);
 
         jTable1.setFont(new java.awt.Font("Times New Roman", 0, 18));
         jTable1.setModel(listacliente);
-        setConfigTabela1();
+        setConfigTabela();
         
     }
 
-    private void setConfigTabela1() {
+    private void setConfigTabela() {
 
         DefaultTableCellRenderer centralizado = new DefaultTableCellRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
@@ -694,40 +765,9 @@ public class Main extends javax.swing.JFrame {
         jTable1.getColumnModel().getColumn(7).setCellRenderer(esquerda);
         jTable1.getColumnModel().getColumn(8).setMinWidth(100);
         jTable1.getColumnModel().getColumn(8).setCellRenderer(esquerda);
-
-        
     }
-    private void setConfigTabela2() {
-
-        DefaultTableCellRenderer centralizado = new DefaultTableCellRenderer();
-        centralizado.setHorizontalAlignment(SwingConstants.CENTER);
-
-        DefaultTableCellRenderer esquerda = new DefaultTableCellRenderer();
-        esquerda.setHorizontalAlignment(SwingConstants.LEFT);
-
-
-        jTable2.getColumnModel().getColumn(0).setMinWidth(20);
-        jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
-        jTable2.getColumnModel().getColumn(0).setCellRenderer(centralizado);
-       
-        jTable2.getColumnModel().getColumn(1).setMinWidth(100);
-        jTable2.getColumnModel().getColumn(1).setCellRenderer(esquerda);
-        jTable2.getColumnModel().getColumn(2).setMinWidth(100);
-        jTable2.getColumnModel().getColumn(2).setCellRenderer(esquerda);
-        jTable2.getColumnModel().getColumn(3).setMinWidth(100);
-        jTable2.getColumnModel().getColumn(3).setCellRenderer(esquerda);
-        jTable2.getColumnModel().getColumn(4).setMinWidth(100);
-        jTable2.getColumnModel().getColumn(4).setCellRenderer(esquerda);
-        jTable2.getColumnModel().getColumn(5).setMinWidth(100);
-        jTable2.getColumnModel().getColumn(5).setCellRenderer(esquerda);
-        jTable2.getColumnModel().getColumn(6).setMinWidth(100);
-        jTable2.getColumnModel().getColumn(6).setCellRenderer(esquerda);
-        jTable2.getColumnModel().getColumn(7).setMinWidth(100);
-        jTable2.getColumnModel().getColumn(7).setCellRenderer(esquerda);
-        jTable2.getColumnModel().getColumn(8).setMinWidth(100);
-        jTable2.getColumnModel().getColumn(8).setCellRenderer(esquerda);
-        
-    }
+    
+    
     
     public static void main(String args[]) {
                 /* Set the Nimbus look and feel */
