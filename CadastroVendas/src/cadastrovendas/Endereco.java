@@ -11,7 +11,7 @@ package cadastrovendas;
  */
 public class Endereco {
     String Rua;
-    int Numero;
+    Integer Numero;
     String Municipio;
     String Estado;
     String CEP;

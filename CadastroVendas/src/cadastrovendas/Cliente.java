@@ -10,7 +10,7 @@ package cadastrovendas;
  * @author ra164644
  */
 public class Cliente extends Endereco{
-    int id;
+    Integer id;
     String Nome;
     String CPF;
     String telefone;
@@ -45,6 +45,14 @@ public class Cliente extends Endereco{
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public boolean isNull() {
+        if (this.CEP.isEmpty() || this.CPF.isEmpty() || this.Estado.isEmpty() || this.Municipio.isEmpty() || this.Nome.isEmpty() || this.Numero==null || this.Rua.isEmpty() || this.telefone.isEmpty()) {
+            return Boolean.TRUE;
+        }else{
+            return Boolean.FALSE;
+        }
     }
     
     

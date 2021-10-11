@@ -46,6 +46,14 @@ public class Fabricante extends Endereco{
     public void setTelefone(String Telefone) {
         this.Telefone = Telefone;
     }
+    
+    public boolean isNull(){
+        if(this.CEP.isEmpty()||this.CNPJ.isEmpty()||this.Estado.isEmpty()||this.Municipio.isEmpty()||this.Nome.isEmpty()||this.Numero== null|| this.Rua.isEmpty()|| this.Telefone.isEmpty()){
+            return Boolean.TRUE;
+        }else{
+            return Boolean.FALSE;
+        }
+    }
 
 
    

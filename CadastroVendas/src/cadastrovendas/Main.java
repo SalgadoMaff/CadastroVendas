@@ -44,6 +44,8 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -98,14 +100,25 @@ public class Main extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
         jLabel25 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jButtonItem = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable4);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -139,23 +152,11 @@ public class Main extends javax.swing.JFrame {
 
         jLabel5.setText("Nº:");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-
         jLabel6.setText("Múnicipio:");
 
         jLabel7.setText("Estado:");
 
         jLabel8.setText("CEP:");
-
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -257,12 +258,6 @@ public class Main extends javax.swing.JFrame {
 
         jLabel9.setText("Nome:");
 
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
-            }
-        });
-
         jLabel10.setText("CNPJ:");
 
         jLabel11.setText("Telefone:");
@@ -273,32 +268,14 @@ public class Main extends javax.swing.JFrame {
 
         jLabel14.setText("Estado:");
 
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
-            }
-        });
-
         jLabel15.setText("CEP:");
-
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
-            }
-        });
-
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
-            }
-        });
 
         jLabel16.setText("Nº:");
 
         jButton2.setText("Adicionar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AddFabricante(evt);
             }
         });
 
@@ -402,37 +379,20 @@ public class Main extends javax.swing.JFrame {
 
         jLabel17.setText("Nome:");
 
-        jTextField17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField17ActionPerformed(evt);
-            }
-        });
-
         jLabel18.setText("Preço:");
 
         jLabel19.setText("Quantidade:");
-
-        jTextField19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField19ActionPerformed(evt);
-            }
-        });
 
         jLabel24.setText("Fabricante:");
 
         jButton3.setText("Adicionar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                AddProduto(evt);
             }
         });
 
         jComboBox1.setAutoscrolls(true);
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -487,24 +447,16 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Produto", jPanel3);
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane4.setViewportView(jTable4);
-
         jLabel25.setText("Cliente:");
 
         jLabel27.setText("Produto:");
 
-        jButtonItem.setText("Adicionar Produto");
+        jButtonItem.setText("Nova Venda");
+        jButtonItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonItemActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Adicionar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -517,7 +469,6 @@ public class Main extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 987, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -535,24 +486,24 @@ public class Main extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(25, 25, 25)
                 .addComponent(jButtonItem)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(191, 191, 191)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel25)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(57, 57, 57)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel27)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(44, 44, 44)
                 .addComponent(jButtonItem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addGap(19, 19, 19))
         );
@@ -575,15 +526,7 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void AddProduto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddProduto
         if(jComboBox1.getSelectedItem()==null){
             JOptionPane.showMessageDialog(null, "Adicione um fabricante válido");
         }else{
@@ -625,7 +568,7 @@ public class Main extends javax.swing.JFrame {
         }
         
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_AddProduto
     
     private void AddCliente(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCliente
         // TODO add your handling code here:
@@ -634,111 +577,98 @@ public class Main extends javax.swing.JFrame {
         a.CPF=jTextField2.getText();
         a.telefone=jTextField3.getText();
         a.Rua=jTextField4.getText();
-        a.Numero=Integer.parseInt(jTextField5.getText());
+        if(jTextField5.getText().isEmpty()){}
+        else{a.Numero=Integer.parseInt(jTextField5.getText());}
         a.Municipio=jTextField6.getText();
         a.Estado=jTextField7.getText();
         a.CEP=jTextField8.getText();
-        if (clientes.isEmpty()) {
-            a.id=1;
-            clientes.add(a);
-            setClienteTable();
-            DefaultComboBoxModel dml= new DefaultComboBoxModel();
-            clientes.forEach(cliente -> dml.addElement(cliente.getNome()));
-            jComboBox2.setModel(dml);
-        } else {
-            boolean contem=false;
-            for (Cliente cliente : clientes) {
-                if(a.Nome.matches(cliente.Nome))  {contem=true;}
-                if(contem)  {break;}
-            }
-            if (!contem){
-                a.id=clientes.size()+1;
+        if(a.isNull()){
+            JOptionPane.showMessageDialog(null, "INSIRA DADOS NÃO NULOS");
+        }else{
+            if (clientes.isEmpty()) {
+                a.id=1;
                 clientes.add(a);
                 setClienteTable();
                 DefaultComboBoxModel dml= new DefaultComboBoxModel();
                 clientes.forEach(cliente -> dml.addElement(cliente.getNome()));
                 jComboBox2.setModel(dml);
-            }else{
-                JOptionPane.showMessageDialog(null, "O nome do cliente deve ser unico");
+            } else {
+                boolean contem=false;
+                for (Cliente cliente : clientes) {
+                    if(a.Nome.matches(cliente.Nome))  {contem=true;}
+                    if(contem)  {break;}
+                }
+                if (!contem){
+                    a.id=clientes.size()+1;
+                    clientes.add(a);
+                    setClienteTable();
+                    DefaultComboBoxModel dml= new DefaultComboBoxModel();
+                    clientes.forEach(cliente -> dml.addElement(cliente.getNome()));
+                    jComboBox2.setModel(dml);
+                }else{
+                    JOptionPane.showMessageDialog(null, "O nome do cliente deve ser unico");
+                }
             }
         }
         
     }//GEN-LAST:event_AddCliente
 
-    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField17ActionPerformed
-
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
-
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
-
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
-
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
-
-    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AddFabricante(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddFabricante
         // TODO add your handling code here:
         Fabricante a= new Fabricante();
         a.setNome(jTextField9.getText());
         a.setCNPJ(jTextField10.getText());
         a.setTelefone(jTextField11.getText());
         a.setRua(jTextField12.getText());
-        a.setNumero(Integer.parseInt(jTextField16.getText()));
+        if(jTextField16.getText().isEmpty()){}
+        else{a.setNumero(Integer.parseInt(jTextField16.getText()));}
         a.setMunicipio(jTextField13.getText());
         a.setEstado(jTextField14.getText());
         a.setCEP(jTextField15.getText());
-        if(fabricantes.isEmpty()){
-            a.setId(1);
-            fabricantes.add(a);
-            setFabricanteTable();
-            DefaultComboBoxModel dml= new DefaultComboBoxModel();
-            fabricantes.forEach(fabricante -> dml.addElement(fabricante.getNome()));
-            jComboBox1.setModel(dml);
+        if(a.isNull()){
+            JOptionPane.showMessageDialog(null, "INSIRA DADOS VALIDOS!");
         }else{
-            boolean contem=false;
-            for (Fabricante fab : fabricantes) {
-                if (fab.Nome.matches(a.Nome)) {
-                    contem=true;
-                }
-                if(contem){break;}
-            }
-            if(!contem){
-                a.setId(fabricantes.size()+1);
+            if(fabricantes.isEmpty()){
+                a.setId(1);
                 fabricantes.add(a);
                 setFabricanteTable();
                 DefaultComboBoxModel dml= new DefaultComboBoxModel();
                 fabricantes.forEach(fabricante -> dml.addElement(fabricante.getNome()));
                 jComboBox1.setModel(dml);
             }else{
-                JOptionPane.showMessageDialog(null, "O nome do fabricante deve ser unico");
-            }
+                boolean contem=false;
+                for (Fabricante fab : fabricantes) {
+                    if (fab.Nome.matches(a.Nome)) {
+                        contem=true;
+                    }
+                    if(contem){break;}
+                }
+                if(!contem){
+                    a.setId(fabricantes.size()+1);
+                    fabricantes.add(a);
+                    setFabricanteTable();
+                    DefaultComboBoxModel dml= new DefaultComboBoxModel();
+                    fabricantes.forEach(fabricante -> dml.addElement(fabricante.getNome()));
+                    jComboBox1.setModel(dml);
+                }else{
+                    JOptionPane.showMessageDialog(null, "O nome do fabricante deve ser unico");
+                }
             
+            } 
         }
         
+        
 
         
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_AddFabricante
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButtonItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonItemActionPerformed
 
     /**
      * @param args the command line arguments
