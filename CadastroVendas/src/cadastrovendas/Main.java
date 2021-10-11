@@ -513,10 +513,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -603,13 +599,31 @@ public class Main extends javax.swing.JFrame {
             }
             if (produtos.isEmpty()){
                 produto.setId(1);
-         
+                produtos.add(produto);
+                setProdutoTable();
+                DefaultComboBoxModel dml= new DefaultComboBoxModel();
+                produtos.forEach((Produto pro)->dml.addElement(pro.Nome));
+                jComboBox3.setModel(dml);
             }else{
-                produto.setId(produtos.size()+1);
+                boolean contem=false;
+                for (Produto pro : produtos) {
+                    if(produto.Nome.matches(pro.Nome))  {contem=true;}
+                    if(contem)  {break;}
+                }
+                if(!contem){
+                    produto.setId(produtos.size()+1);
+                    produtos.add(produto);
+                    setProdutoTable();
+                    DefaultComboBoxModel dml= new DefaultComboBoxModel();
+                    produtos.forEach((Produto pro)->dml.addElement(pro.Nome));
+                    jComboBox3.setModel(dml);
+                }else{
+                    JOptionPane.showMessageDialog(null, "O nome do produto deve ser unico");
+                }
             }
-            produtos.add(produto);
+                
         }
-        setProdutoTable();
+        
 
     }//GEN-LAST:event_jButton3ActionPerformed
     
@@ -626,11 +640,29 @@ public class Main extends javax.swing.JFrame {
         a.CEP=jTextField8.getText();
         if (clientes.isEmpty()) {
             a.id=1;
+            clientes.add(a);
+            setClienteTable();
+            DefaultComboBoxModel dml= new DefaultComboBoxModel();
+            clientes.forEach(cliente -> dml.addElement(cliente.getNome()));
+            jComboBox2.setModel(dml);
         } else {
-            a.id=clientes.size()+1;
+            boolean contem=false;
+            for (Cliente cliente : clientes) {
+                if(a.Nome.matches(cliente.Nome))  {contem=true;}
+                if(contem)  {break;}
+            }
+            if (!contem){
+                a.id=clientes.size()+1;
+                clientes.add(a);
+                setClienteTable();
+                DefaultComboBoxModel dml= new DefaultComboBoxModel();
+                clientes.forEach(cliente -> dml.addElement(cliente.getNome()));
+                jComboBox2.setModel(dml);
+            }else{
+                JOptionPane.showMessageDialog(null, "O nome do cliente deve ser unico");
+            }
         }
-        clientes.add(a);
-        setClienteTable();
+        
     }//GEN-LAST:event_AddCliente
 
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
@@ -670,7 +702,6 @@ public class Main extends javax.swing.JFrame {
         a.setCEP(jTextField15.getText());
         if(fabricantes.isEmpty()){
             a.setId(1);
-            a.setId(fabricantes.size()+1);
             fabricantes.add(a);
             setFabricanteTable();
             DefaultComboBoxModel dml= new DefaultComboBoxModel();

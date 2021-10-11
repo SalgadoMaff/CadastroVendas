@@ -13,9 +13,9 @@ import java.util.ArrayList;
  */
 public class Venda {
     int id;
-    ArrayList<Produto> lista;
-    float valortotal;
-    Cliente cliente;
+    String NomeProduto;
+    Float Valor;
+    String NomeCliente;
 
     public int getId() {
         return id;
@@ -25,24 +25,29 @@ public class Venda {
         this.id = id;
     }
 
-    public ArrayList<Produto> getLista() {
-        return lista;
+    public String getNomeProduto() {
+        return NomeProduto;
     }
 
-    public float getValortotal() {
-        return valortotal;
+    public void setNomeProduto(String NomeProduto) {
+        this.NomeProduto = NomeProduto;
     }
 
-    public void setValortotal(float valortotal) {
-        this.valortotal = valortotal;
+    public Float getValor() {
+        return Valor;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public void setValor(Float Valor) {
+        this.Valor = Valor;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public String getNomeCliente() {
+        return NomeCliente;
     }
+
+    public void setNomeCliente(String NomeCliente) {
+        this.NomeCliente = NomeCliente;
+    }
+
     
 }
