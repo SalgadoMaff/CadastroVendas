@@ -134,12 +134,6 @@ public class Main extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(jTable5);
 
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
-            }
-        });
-
         jLabel27.setText("Produto:");
 
         jButton5.setText("Adicionar Carrinho");
@@ -152,17 +146,11 @@ public class Main extends javax.swing.JFrame {
         jButton6.setText("Finalizar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                FinalizarCompra(evt);
             }
         });
 
         jLabel19.setText("Quantidade:");
-
-        jTextField19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField19ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -564,12 +552,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-
         jLabel25.setText("Cliente:");
 
         jLabel26.setText("Escolha o Cliente para o qual quer realizar a venda:");
@@ -808,15 +790,7 @@ public class Main extends javax.swing.JFrame {
         jFrame1.setVisible(true);
     }//GEN-LAST:event_AbrirCarrinho
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
-
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void FinalizarCompra(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizarCompra
         if(carrinho.size()==0){
             JOptionPane.showMessageDialog(null, "Carrinho deve estar com pelo menos um item");
         }else{
@@ -827,11 +801,7 @@ public class Main extends javax.swing.JFrame {
             setVendasTable();
             jFrame1.dispose();
         }
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19ActionPerformed
+    }//GEN-LAST:event_FinalizarCompra
 
     /**
      * @param args the command line arguments
